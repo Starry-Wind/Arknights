@@ -4,7 +4,6 @@ import cv2 as cv
 import numpy as np
 import time
 
-#adb shell input tap x y : 模拟点击某一点
 
 
 

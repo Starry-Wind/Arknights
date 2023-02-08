@@ -16,6 +16,10 @@
 2. 使用前先将进行中的生息演算结算
 3. 开始使用吧！
 
+## 下载地址
+
+[beta测试版](https://github.com/Starry-Wind/Arknights/releases/tag/python)
+
 
 ## 常见问题
 

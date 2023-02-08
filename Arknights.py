@@ -8,8 +8,8 @@ import time
 
 
 def screenshot():
-    os.system('adb shell /system/bin/screencap -p /sdcard/screencap.png')
-    os.system('adb pull /sdcard/screencap.png ./debug/screenshot.png')
+    os.system('platform-tools\\adb.exe shell /system/bin/screencap -p /sdcard/screencap.png')
+    os.system('platform-tools\\adb.exe pull /sdcard/screencap.png ./debug/screenshot.png')
 
 
     
@@ -43,7 +43,7 @@ def calculated(result, shape):
  
 
 def start():
-    os.system('adb connect 127.0.0.1:62001')   #连接模拟器
+    os.system('platform-tools\\adb.exe connect 127.0.0.1:62001')   #连接模拟器
     screenshot()
     target = cv.imread('./temp/startgame.png')
     result = scan_screenshot(target)
@@ -51,7 +51,7 @@ def start():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
     else:
         print("未在主界面，请重试")
     
@@ -63,7 +63,7 @@ def start():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
     time.sleep(3)
@@ -74,7 +74,7 @@ def start():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
     time.sleep(3)
@@ -85,7 +85,7 @@ def start():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
 
@@ -94,9 +94,9 @@ def check():
     target = cv.imread('./temp/qiyu.png')
     result = scan_screenshot(target)
     if result['max_val'] > 0.9:
-        os.system('adb shell input tap 60 60')
+        os.system('platform-tools\\adb.exe shell input tap 60 60')
         time.sleep(1)
-        os.system('adb shell input tap 60 60')
+        os.system('platform-tools\\adb.exe shell input tap 60 60')
         return 1
 
 
@@ -109,7 +109,7 @@ def start_day():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
     
@@ -120,7 +120,7 @@ def start_day():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
     
         
 
@@ -131,7 +131,7 @@ def start_day():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
 
@@ -143,7 +143,7 @@ def start_day():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
         screenshot()
         target = cv.imread('./temp/startmission.png')
         result = scan_screenshot(target)
@@ -151,14 +151,14 @@ def start_day():
         if result['max_val'] > 0.9:
             points = calculated(result, target.shape)
             print(points)
-            os.system('adb shell input tap %d %d' %points)
+            os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
     else:
         screenshot()
         target = cv.imread('./temp/buliequ.png')
         result = scan_screenshot(target)
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
         screenshot()
         target = cv.imread('./temp/startmission.png')
         result = scan_screenshot(target)
@@ -166,7 +166,7 @@ def start_day():
         if result['max_val'] > 0.9:
             points = calculated(result, target.shape)
             print(points)
-            os.system('adb shell input tap %d %d' %points)
+            os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
     
    
 
@@ -182,7 +182,7 @@ def startmission():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
     time.sleep(1)
@@ -194,7 +194,7 @@ def startmission():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
     time.sleep(1)
     screenshot()
@@ -204,17 +204,17 @@ def startmission():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
     time.sleep(7)
 
-    os.system('adb shell input tap 100 90')
+    os.system('platform-tools\\adb.exe shell input tap 100 90')
     time.sleep(1)
-    os.system('adb shell input tap 1500 650')
+    os.system('platform-tools\\adb.exe shell input tap 1500 650')
     time.sleep(4)
-    os.system('adb shell input tap 1500 650')
+    os.system('platform-tools\\adb.exe shell input tap 1500 650')
     time.sleep(4)
-    os.system('adb shell input tap 60 1000')
+    os.system('platform-tools\\adb.exe shell input tap 60 1000')
 
 
     
@@ -226,20 +226,20 @@ def nextday():
     
         points = calculated(result, target.shape)
         print(points)
-        os.system('adb shell input tap %d %d' %points)
+        os.system('platform-tools\\adb.exe shell input tap %d %d' %points)
 
 
 
 def leave():
-    os.system('adb shell input tap 60 60') 
-    os.system('adb shell input tap 1200 985')
-    os.system('adb shell input tap 1250 740') 
+    os.system('platform-tools\\adb.exe shell input tap 60 60') 
+    os.system('platform-tools\\adb.exe shell input tap 1200 985')
+    os.system('platform-tools\\adb.exe shell input tap 1250 740') 
     time.sleep(3)
-    os.system('adb shell input tap 1750 935')
+    os.system('platform-tools\\adb.exe shell input tap 1750 935')
     time.sleep(2)
-    os.system('adb shell input tap 1750 935')
+    os.system('platform-tools\\adb.exe shell input tap 1750 935')
     time.sleep(2)
-    os.system('adb shell input tap 1750 935')
+    os.system('platform-tools\\adb.exe shell input tap 1750 935')
     
 
 
@@ -253,13 +253,13 @@ while True:
     time.sleep(2)
     if(check()==1):         #检测奇遇
         time.sleep(2)
-        os.system('adb shell input tap 1240 988') 
+        os.system('platform-tools\\adb.exe shell input tap 1240 988') 
         time.sleep(1)
-        os.system('adb shell input tap 1275 740')
+        os.system('platform-tools\\adb.exe shell input tap 1275 740')
         time.sleep(5)
-        os.system('adb shell input tap 1748 940')
+        os.system('platform-tools\\adb.exe shell input tap 1748 940')
         time.sleep(2)
-        os.system('adb shell input tap 1795 935')
+        os.system('platform-tools\\adb.exe shell input tap 1795 935')
         print("发现错误，重新开始")
     else:    
         time.sleep(1)
